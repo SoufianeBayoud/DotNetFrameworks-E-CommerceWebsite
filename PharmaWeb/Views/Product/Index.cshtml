@@ -1,0 +1,14 @@
+﻿@using PharmaWeb.Data
+@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Overview of all Products</h1>
+
+<p>
+    <a asp-action="Create">Create a new product</a>
+</p>
+
+@await Html.PartialAsync("_Product", Model)

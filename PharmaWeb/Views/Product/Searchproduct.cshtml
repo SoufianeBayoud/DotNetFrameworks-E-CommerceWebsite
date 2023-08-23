@@ -1,0 +1,53 @@
+﻿ @model PharmaWeb.Models.SearchProductModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search your product</h1>
+
+<form asp-controller="Product" asp-action="Search" method="get" class="form-inline mb-5">
+
+    <div class="d-flex flex-row ">
+        <div class="form-group" style="width:350px">
+            <label for="searchTerm">Search: </label>
+            <input id="searchTerm" width:390px; asp-for="SearchString" class="form-control ml-1" />
+        </div>
+
+
+        <div class="form-group mx-2" style="width:350px">
+            <label for="category">Category: </label>
+            <select asp-for="ProductCategory " width:390px; asp-items="Model.Categories" class="form-control ml-1">
+                <option value="">Choose an option...</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row ">
+
+        <div class="form-group form-check" style="margin-right:8px">
+            <div>
+                <input asp-for="NameFilter" class="form-check-input" style="margin-top:12px" />
+                <label asp-for="NameFilter" style="margin-top:8px" class="form-check-label"></label>
+
+            </div>
+        </div>
+
+        <div class="form-group form-check" style="margin-right:8px">
+            <div>
+                <input asp-for="ProductNumberFilter" class="form-check-input" style="margin-top:12px" />
+                <label asp-for="ProductNumberFilter" style="margin-top:8px" class="form-check-label"></label>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top:10px">
+        <button class="btn btn-primary">Search</button>
+    </div>
+
+
+
+</form>
+
+@await Html.PartialAsync("Shop", Model.Products) 

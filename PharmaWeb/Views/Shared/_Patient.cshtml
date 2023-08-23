@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PharmaWeb.Data.Appointment>
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeekDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DaysSession)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WeekDays)
+                </td>
+                <td>
+                    @if (item.DaysSession == PharmaWeb.Data.DaysSession.Session1)
+                    {
+                        <p>Sesssion 1: 9am until 10am</p>
+                    }
+                    else if (item.DaysSession == PharmaWeb.Data.DaysSession.Session2)
+                    {
+                        <p>Sesssion 2: 10am until 11am</p>
+                    }
+                    else if (item.DaysSession == PharmaWeb.Data.DaysSession.Session3)
+                    {
+                        <p>Sesssion 3: 11am until 12pm</p>
+                    }
+                    else if (item.DaysSession == PharmaWeb.Data.DaysSession.Session4)
+                    {
+                        <p>Sesssion 4: 2pm until 3pm</p>
+                    }
+                    else
+                    {
+                        <p>Sesssion 5: 3pm until 4pm</p>
+                    }
+                </td>
+
+                <td>
+                    <form asp-controller="Appointment" asp-action="Delete" asp-route-id="@item?.AfspraakID" method="post">
+                        <button class="btn btn-danger" style="margin-right:15px" a>@localizer["cancel"]</button>
+                        <a class="btn btn-primary" asp-controller="Appointment" asp-route-id="@item?.AfspraakID" asp-action="Detail">@localizer["info"]</a>
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

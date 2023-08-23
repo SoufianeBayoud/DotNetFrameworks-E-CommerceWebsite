@@ -1,0 +1,76 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+<link rel="stylesheet" href="~/css/Stylesheet.css" />
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+<h1>@localizer["Welcome"]</h1>
+
+
+
+
+<h5 style="text-align: center; padding-top: 20px">@localizer["h5"] </h5>
+
+<div id="carouselExampleControls" class="paddingchange carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="background-color:white">
+            <img class="d-block w-50" src="~/css/img/Pharma/pharma11.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item" style="background-color:white">
+            <img class="d-block w-50" src="~/css/img/Pharma/pharma2.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item" style="background-color:white">
+            <img class="d-block w-50" src="~/css/img/Pharma/pharma3.jpg" alt="Third slide">
+        </div>
+        <div class="carousel-item" style="background-color:white">
+            <img class="d-block w-50" src="~/css/img/Pharma/pharma4.jpg" alt="4 slide">
+        </div>
+        <div class="carousel-item" style="background-color:white">
+            <img class="d-block w-50" src="~/css/img/Pharma/pharma5.jpg" alt="5 slide">
+        </div>
+        <div class="carousel-item" style="background-color:white">
+            <img class="d-block w-50" src="~/css/img/Pharma/pharma6.jpg" alt="6 slide">
+        </div>
+    </div>
+    <a class=" carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="iconcolor carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a class=" carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="iconcolor carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+</div>
+
+<div class="TitlezPad"><h3 class="Titlez">@localizer["TitlezPad"]</h3></div>
+
+<p>
+   @localizer["paragraph"]
+</p>
+
+<div><p>@localizer["btnproduct"] </p></div>
+
+
+<div class="form-group" style="margin-top:10px;margin-bottom:10px">
+    <a asp-controller="Product" class="btn-primary btn" asp-action="Search">@localizer["overview"]</a>
+</div>
+
+<div class="TitlezPad"><h3 class="Titlez">@localizer["appointment"]</h3></div>
+
+<p>@localizer["paragraph1"]</p>
+<ul>
+    <li>@localizer["s1"]</li>
+    <li>@localizer["s2"]</li>
+    <li>@localizer["s3"]</li>
+</ul>
+
+<p>
+    @localizer["paragraph2"]
+    On this <a asp-controller="Appointment" asp-action="Create">Tool </a>  list you will find the form to be tested.
+    That test will be sent the same day to the lab that will analyze your test.
+</p>
+
+
+<div class="form-group" style="margin-top:10px">
+    <a asp-controller="Appointment" class="btn-primary btn" asp-action="Create">@localizer["apptbtn"] </a>
+</div>

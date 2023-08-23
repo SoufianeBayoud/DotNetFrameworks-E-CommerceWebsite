@@ -1,0 +1,132 @@
+﻿@using PharmaWeb.Data
+@model PharmaWeb.Models.ViewModels.CreateAppointmentCommand
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+<h1>@localizer["faitrdv"]</h1>
+
+<h4>@localizer["infordv"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">@localizer["firstname"]</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label">@localizer["lastname"]</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label">@localizer["birthdate"]</label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label">@localizer["phonenr"]</label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="WeekDays" class="control-label">@localizer["weekdays"]</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="WeekDays" id="id12" value="@WeekDays.Monday">
+                        <label class="form-check-label" for="id12">@localizer["monday"]</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="WeekDays" id="id16" value="@WeekDays.Tuesday">
+                        <label class="form-check-label" for="id16">@localizer["tue"]</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="WeekDays" id="id18" value="@WeekDays.Wednesday">
+                        <label class="form-check-label" for="id18">@localizer["wed"]</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="WeekDays" id="id18" value="@WeekDays.Thursday">
+                        <label class="form-check-label" for="id18"> @localizer["thr"]</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="WeekDays" id="id18" value="@WeekDays.Friday">
+                        <label class="form-check-label" for="id18">@localizer["fri"]</label>
+                    </div>
+                </div>
+                <span asp-validation-for="WeekDays" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="DaysSession" class="control-label">@localizer["day"]</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="DaysSession" id="idReason1" value="@DaysSession.Session1">
+                        <label class="form-check-label" for="id12">9AM-10AM</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="DaysSession" id="id16" value="@DaysSession.Session2">
+                        <label class="form-check-label" for="id16">10AM-11AM</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="DaysSession" id="id18" value="@DaysSession.Session3">
+                        <label class="form-check-label" for="id18">11AM-12PM</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="DaysSession" id="id18" value="@DaysSession.Session4">
+                        <label class="form-check-label" for="id18"> 2PM-3PM</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="DaysSession" id="id18" value="@DaysSession.Session5">
+                        <label class="form-check-label" for="id18">3PM-4PM</label>
+                    </div>
+                </div>
+                <span asp-validation-for="DaysSession" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-2">
+                <label asp-for="Reasontest" class="control-label">@localizer["reason"]</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="Reasontest" id="id12" value="@Reasontest.reason1">
+                        <label class="form-check-label" for="id12">vacation departure</label>
+
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="Reasontest" id="id16" value="@Reasontest.reason2">
+                        <label class="form-check-label" for="id16">symptoms</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="Reasontest" id="id18" value="@Reasontest.reason3">
+                        <label class="form-check-label" for="id18">hospitalization</label>
+                    </div>
+                </div>
+                <div>
+
+                    <span asp-validation-for="Reasontest" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group form-check">
+                <div>
+                    <input asp-for="NotARobot" class="form-check-input" style="margin-top:12px" value="@(Model.NotARobot ? "false": "true")" />
+                    <label asp-for="NotARobot" style="margin-top:8px" class="form-check-label"></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@if (Model.Reasontest == Reasontest.reason1)
+{
+    <p class="text text-danger">@localizer["cost"]</p>
+}
+
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

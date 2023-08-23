@@ -1,0 +1,71 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@{
+    ViewBag.Title = "Google Map";
+}
+
+<h1>@localizer["aboutus"]</h1>
+<hr />
+<fieldset>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <div class="TitlezPad"><h3 class="Titlez">@localizer["concept"]</h3></div>
+
+
+    <div>
+        <p>
+            @localizer["par1"]
+        </p>
+    </div>
+
+    <div class="TitlezPad"><h3 class="Titlez">Information</h3></div>
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @localizer["street"]
+        </dt>
+        <dd class="col-sm-10">
+            Pr. Elisabethlaan 121
+        </dd>
+        <dt class="col-sm-2">
+            @localizer["city"]
+        </dt>
+        <dd class="col-sm-10">
+            1030 Schaarbeek
+        </dd>
+        <dt class="col-sm-2">
+            @localizer["phonenr"]
+        </dt>
+        <dd class="col-sm-10">
+            022157492
+        </dd>
+        <dt class="col-sm-2">
+            @localizer["hour"]
+        </dt>
+        <dd class="col-sm-10">
+            @localizer["time"]
+        </dd>
+    </dl>
+
+    <p style="font-weight: bold; color:green">@localizer["q1"]</p>
+    <p style="font-weight: bold; color:gray">@localizer["q2"]</p>
+
+    <div id="googleMap" style="height:600px;width:100%; margin-top:20px"></div>
+    <script>
+
+        function myMap() {
+            var myCenter = new google.maps.LatLng(50.87553921091434, 4.378105887145009);
+            var mapProp = { center: myCenter, zoom: 12, scrollwheel: false, draggable: true, mapTypeId: google.maps.MapTypeId.ROADMAP };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({ position: myCenter });
+            marker.setMap(map);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSa533SupQizJu6JAja8XZStx1QNWLI9g&callback=myMap"></script>
+</fieldset>
+<footer>
+    <p style="text-align: center; font-style: oblique">© @DateTime.Now.ToLocalTime()</p>
+</footer>

@@ -1,0 +1,10 @@
+﻿@model IEnumerable<PharmaWeb.Data.Appointment>
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+<h1>@localizer["overview"]</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">@localizer["btn"]</a>
+</p>
+
+@await Html.PartialAsync("_Patient", Model)

@@ -1,0 +1,13 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+<h1>@localizer["app"]</h1>
+<hr />
+<h4>@localizer["conf"]</h4>
+
+<div class="alert alert-success" role="alert">
+    @localizer["success"]
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Index">@localizer["back"]</a>
+</div>

@@ -1,0 +1,207 @@
+﻿body {
+}
+
+.navbar-brand {
+    color: #799A18;
+    padding-left: 15px;
+}
+
+    .navbar-brand :hover {
+        color: #526910;
+    }
+
+.centr {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.marg {
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.nav-item a {
+    font-weight: 500;
+    color: #000000;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+    .nav-item a:hover {
+        color: #4f4f4f;
+    }
+
+
+.carousel-item {
+    height: 32rem;
+    background: #F6F6F6;
+    color: #D9AAF6;
+    position: relative;
+}
+
+.carousel-inner img {
+    margin: auto;
+}
+
+
+.paddingchange {
+    padding-top: 75px;
+}
+
+.carimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 20px
+}
+
+.flowercolor {
+    color: #799A18;
+}
+
+
+.intro {
+    padding-top: 15px;
+    color: #543069;
+    font-weight: 500;
+    width: 800px;
+    text-align: center;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    outline: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    background-image: none;
+}
+
+
+    .carousel-control-next-icon:after {
+        content: '>';
+        font-size: 55px;
+        font-weight: 500;
+        color: #799A18;
+    }
+
+
+    .carousel-control-prev-icon:after {
+        content: '<';
+        font-size: 55px;
+        font-weight: 500;
+        color: #799A18;
+    }
+
+.navcolor {
+    background-color: #F6F6F6;
+}
+
+.profile-reg {
+    color: #799A18;
+}
+
+.profile-log {
+    color: #526910;
+}
+
+.topsec {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #799A18;
+}
+
+.topp {
+    text-align: center;
+    color: white;
+}
+
+
+.Titlez {
+    border-bottom: 2px solid;
+    padding-bottom: 10px;
+}
+
+.TitlezPad {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.TitlezPadd {
+    padding-bottom: 100px;
+}
+
+.padr {
+    padding-right: 60px;
+}
+
+.customdiv {
+    background-color: #799A18;
+    height: 500px;
+    margin-top: 100px;
+    margin-bottom: 250px;
+}
+
+    .customdiv img {
+        margin-left: 70px;
+        margin-top: 40px;
+        height: 400px;
+    }
+
+.customdiv {
+    color: white;
+}
+
+    .customdiv h4 {
+        font-size: 40px;
+    }
+
+    .customdiv p {
+        font-size: 25px;
+    }
+
+
+
+.txtcont {
+    margin-right: 220px;
+    margin-top: 150px;
+}
+
+.orderbn {
+    background-color: #799A18;
+    color: white;
+}
+
+orderbn:hover {
+    background-color: #526910;
+    color: white;
+}
+
+.mrgnnxttoftm {
+    margin-left: 200px;
+}
+
+.titlegreen {
+    font-weight: 500;
+    color: #526910;
+}
+
+.shipped {
+    background-color: lawngreen;
+}
+
+.pdngmsg {
+    margin-top: 150px;
+}

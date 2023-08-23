@@ -1,0 +1,89 @@
+﻿@using PharmaWeb.Data
+@model PharmaWeb.Data.Appointment
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+
+<h1>@localizer["detail"]</h1>
+
+<div>
+    <h4>@localizer["app"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName):
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName):
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BirthDate):
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber):
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WeekDays):
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WeekDays)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DaysSession):
+        </dt>
+        <dd class = "col-sm-10">
+            
+             @if (Model.DaysSession == DaysSession.Session1)
+            {
+                <p>9am until 10am</p>
+            }
+            else if(Model.DaysSession == DaysSession.Session2)
+            {
+                <p>10am until 11am</p>
+            }
+             else if(Model.DaysSession == DaysSession.Session3)
+            {
+                <p>11am until 12pm</p>
+            }
+             else if(Model.DaysSession == DaysSession.Session4)
+            {
+              <p>2pm until 3pm</p>
+            }
+             else
+             {
+               <p>3pm until 4pm</p>  
+            } 
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Reasontest):
+        </dt>
+        <dd class = "col-sm-10">
+           @if (Model.Reasontest == Reasontest.reason1)
+            {
+                <p>@localizer["vac"]</p>
+            }
+            else if(Model.Reasontest == Reasontest.reason2)
+            {
+                <p>@localizer["sym"]</p>
+            }
+             else if(Model.Reasontest == Reasontest.reason3)
+            {
+                <p>@localizer["hos"]</p>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn-danger btn" asp-controller="Appointment" asp-action="Search">@localizer["back"]</a>
+</div>

@@ -1,0 +1,13 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Order Confirmed";
+}
+
+<h1>@localizer["order"]</h1>
+<hr />
+<h4>@localizer["confirm"]</h4>
+
+<div class="alert alert-success" role="alert">
+  @localizer["success"]
+</div>

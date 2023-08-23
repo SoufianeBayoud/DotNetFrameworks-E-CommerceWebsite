@@ -1,0 +1,80 @@
+﻿@model IEnumerable<PharmaWeb.Models.CartLine>
+
+@{
+    double total = 0;
+}
+
+<h1>Shopping list</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                Subtotal
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+      double subtotal = (item.Quantity * item.Product.Price);
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                @item.Product.Price.ToString("c")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @item.Quantity x @item.Product.Price.ToString("c") = @subtotal.ToString("c")
+            </td>
+            <td>
+              <form class="d-inline-block my-2" asp-controller="Shop" asp-action="RemoveFromShop">
+                    <input type="hidden" name="id" value="@item.Product.Id" />
+                    <button class="btn btn-danger">Remove</button>
+                </form>
+               
+            </td>
+            </tr>
+            total += subtotal;
+
+        
+}
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>
+                Total
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+            <th>
+                @total.ToString("c")
+            </th>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="button-group">
+    <a class="btn btn-success" asp-controller="Order" asp-action="CheckOut">Command</a>
+     <a class="btn btn-primary" asp-controller="Product" asp-action="Search">Back to overview</a>
+    <form class="d-inline-block my-2" asp-controller="Shop" asp-action="Clear">
+        <button class="btn btn-danger">Clear</button>
+    </form>
+
+</div>
+
